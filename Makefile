@@ -6,10 +6,8 @@ lin: gen
 
 win: gen
 	@echo "==> Building App in MinGW container..." && \
-	docker run --rm -it -v "$(PWD)":/go/src lobre/go-mingw build
+	docker run --rm -it -v "$(PWD)":/go/src -v "$(GOPATH)/pkg/mod":/go/pkg/mod lobre/go-mingw build
 
 gen:
 	@echo "==> Generating files..." && \
 	go generate
-
-

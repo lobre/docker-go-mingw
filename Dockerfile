@@ -8,7 +8,7 @@ RUN apk add mingw-w64-binutils &&\
     apk add mingw-w64-gcc && \
     apk add make
 
-RUN adduser -H -D -u 1000 go
+RUN adduser -D -u 1000 go
 USER go
 
 ENV CGO_ENABLED=1 \
